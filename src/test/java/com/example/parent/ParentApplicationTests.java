@@ -8,3 +8,6 @@ class ParentApplicationTests {
 
     @Test
     void contextLoads() {
+    }
+
+}
