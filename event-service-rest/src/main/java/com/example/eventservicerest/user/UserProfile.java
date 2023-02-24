@@ -32,7 +32,7 @@ public class UserProfile { //implements UserDetails {
     private String lastname;
     private String email;
     private String password;
-//
+
 //    @Enumerated(EnumType.STRING)
 ////    private Role role;
 //
