@@ -1,8 +1,10 @@
 CREATE TABLE _user (
 
-    id NUMERIC,
-    firstname VARCHAR(50),
-    lastname VARCHAR(50),
-    email VARCHAR(50),
-    password VARCHAR(50)
+    id integer,
+    firstname VARCHAR(250),
+    lastname VARCHAR(250),
+    email VARCHAR(250),
+    password VARCHAR(250),
+    role VARCHAR(250),
+    primary key (id)
 );

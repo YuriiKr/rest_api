@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Optional;
 import com.example.eventservicedto.dto.Event;
 import com.example.eventserviceimpl.service.EventServiceImpl;
-import com.example.eventservicerest.repository.UserRepository;
+import com.example.eventservicerest.user.UserRepository;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.web.bind.annotation.GetMapping;
