@@ -1,33 +1,31 @@
-package com.example.eventservicedto.dto;
+package com.example.eventservicerest.entities;
 
-import java.time.LocalDateTime;
+import java.util.List;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "Event")
+@Table(name = "shop")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Event {
+public class Shop {
 
     @Id
     @GeneratedValue
     private Long id;
 
-    private String title;
+    private String name;
 
-    private String place;
+    private String address;
 
-    private String speaker;
-
-    private String eventType;
-
-    private LocalDateTime dateTime;
+    @OneToMany(mappedBy="shop")
+    private List<Vehicle> vehicle;
 }

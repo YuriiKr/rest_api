@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="02" author="yurii">
+        <sql>
+            insert into public.shop (name, address, vehicle_id) values ('shop1', 'Niko', 1);
+        </sql>
+<!--        <comment>Inserting Shops</comment>-->
+<!--        <insert tableName="shop">-->
+<!--            <column name="id" valueNumeric="1"/>-->
+<!--            <column name="name" value="Niko"/>-->
+<!--            <column name="address" value="Luhanska"/>-->
+<!--            <column name="vehicle_id" value="1"/>-->
+<!--        </insert>-->
+<!--        <insert tableName="shop">-->
+<!--            <column name="id" valueNumeric="2"/>-->
+<!--            <column name="name" value="Rik Auto"/>-->
+<!--            <column name="address" value="Pivdennyj"/>-->
+<!--            <column name="vehicle_id" value="1"/>-->
+<!--        </insert>-->
+<!--        <insert tableName="shop">-->
+<!--            <column name="id" valueNumeric="3"/>-->
+<!--            <column name="name" value="Lube Auto"/>-->
+<!--            <column name="address" value="Kiltseva"/>-->
+<!--            <column name="vehicle_id" value="1"/>-->
+<!--        </insert>-->
+    </changeSet>
+</databaseChangeLog>

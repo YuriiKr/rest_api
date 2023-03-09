@@ -1,0 +1,23 @@
+version: "3.3"
+services:
+  db:
+    image: postgres:alpine3.17
+    hostname: postgre
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5433:5432'
+    volumes:
+      - db:/var/lib/postgresql/data
+
+  event-service-rest:
+    image: rest:1.0
+    ports:
+      - '8080:8080'
+    depends_on:
+      - db
+volumes:
+  db:
+    driver: local

@@ -1,5 +1,6 @@
 package com.example.eventserviceimpl.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import com.example.eventserviceapi.service.EventService;
@@ -24,7 +25,14 @@ public class EventServiceImpl implements EventService {
 
     @Override
     public List<Event> getAllEvents() {
-        return eventRepository.findAll();
+        List<Event> events = new ArrayList<>();
+        eventRepository.findAll()
+                .forEach(event -> {
+                            event.setEventType(event.getEventType().toUpperCase());
+                            events.add(event);
+                        }
+                );
+        return events;
     }
 
 
