@@ -8,7 +8,7 @@
 
     <changeSet id="02" author="yurii">
         <sql>
-            insert into public.shop (name, address, vehicle_id) values ('shop1', 'Niko', 1);
+            insert into public.shop (name, address) values ('shop1', 'Niko');
         </sql>
 <!--        <comment>Inserting Shops</comment>-->
 <!--        <insert tableName="shop">-->

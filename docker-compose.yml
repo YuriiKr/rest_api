@@ -13,7 +13,7 @@ services:
       - db:/var/lib/postgresql/data
 
   event-service-rest:
-    image: rest:1.0
+    image: rest:latest
     ports:
       - '8080:8080'
     depends_on:

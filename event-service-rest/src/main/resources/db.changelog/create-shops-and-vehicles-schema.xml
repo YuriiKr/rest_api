@@ -18,14 +18,14 @@
             <column name="model" type="varchar(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="shop_id" type="int">
+            <column name="shop_shopId" type="int">
                 <constraints nullable="false"/>
             </column>
         </createTable>
 
         <createTable tableName="shop"
                      remarks="A table to contain all the shops">
-            <column name="id" type="int" autoIncrement="true">
+            <column name="shopId" type="int" autoIncrement="true">
                 <constraints nullable="false" unique="true" primaryKey="true"/>
             </column>
             <column name="name" type="varchar(255)">
@@ -38,8 +38,8 @@
 
         <addForeignKeyConstraint constraintName="fk_vehicle2shop"
                                  baseTableName="vehicle"
-                                 baseColumnNames="shop_id"
+                                 baseColumnNames="shop_shopId"
                                  referencedTableName="shop"
-                                 referencedColumnNames="id"/>
+                                 referencedColumnNames="shopId"/>
     </changeSet>
 </databaseChangeLog>
