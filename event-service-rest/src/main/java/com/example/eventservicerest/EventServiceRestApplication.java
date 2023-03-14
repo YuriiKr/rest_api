@@ -1,9 +1,9 @@
 package com.example.eventservicerest;
 
-import com.example.eventservicedto.dto.Event;
-import com.example.eventservicerest.entities.Vehicle;
-import com.example.eventservicerest.token.Token;
-import com.example.eventservicerest.user.User;
+import com.example.eventservicedto.entities.Event;
+import com.example.eventservicedto.entities.Vehicle;
+import com.example.eventservicedto.entities.Token;
+import com.example.eventservicedto.entities.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;

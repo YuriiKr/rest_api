@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import com.example.eventserviceapi.service.EventService;
-import com.example.eventservicedto.dto.Event;
+import com.example.eventservicedto.entities.Event;
 import com.example.eventserviceimpl.repository.EventStorage;
 import lombok.AllArgsConstructor;
 

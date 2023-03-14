@@ -2,12 +2,12 @@ package com.example.eventservicerest.controller;
 
 import java.util.List;
 import java.util.Optional;
-import com.example.eventservicerest.entities.Vehicle;
+import com.example.eventservicedto.entities.Vehicle;
+import com.example.eventservicedto.model.VehicleModel;
 import com.example.eventservicerest.repository.VehicleRepository;
 import com.example.eventservicerest.service.VehicleServiceImpl;
-import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.context.event.EventListener;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,14 +28,12 @@ public class VehicleController {
     @PostMapping
     @RequestMapping("/create")
     public void createVehicle( @RequestBody Vehicle vehicle) {
-        System.out.println("=========== >>>>> CREATE VEHICLE ++++");
-        System.out.println("=========== >>>>> " + vehicle.toString());
         vehicleServiceImpl.createVehicle(vehicle);
     }
 
     @GetMapping
-    @RequestMapping("/getById")
-    public Optional<Vehicle> getVehicleById( @RequestBody Long id) {
+    @RequestMapping("/getById/{id}")
+    public Optional<VehicleModel> getVehicleById(@PathVariable(value="id")Long id) {
         return vehicleServiceImpl.getVehicle(id);
     }
 

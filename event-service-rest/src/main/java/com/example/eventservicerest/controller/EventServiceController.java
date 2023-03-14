@@ -2,12 +2,13 @@ package com.example.eventservicerest.controller;
 
 import java.util.List;
 import java.util.Optional;
-import com.example.eventservicedto.dto.Event;
+import com.example.eventservicedto.entities.Event;
 import com.example.eventserviceimpl.service.EventServiceImpl;
 import com.example.eventservicerest.user.UserRepository;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,8 +33,8 @@ public class EventServiceController {
     }
 
     @GetMapping
-    @RequestMapping("/getById")
-    public Optional<Event> getEventById( @RequestBody Long id) {
+    @RequestMapping("/getById/{id}")
+    public Optional<Event> getEventById(@PathVariable(value="id")Long id) {
         return eventServiceImpl.getEvent(id);
     }
 

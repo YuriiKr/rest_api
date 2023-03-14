@@ -1,7 +1,7 @@
 package com.example.eventserviceapi.service;
 import java.util.List;
 import java.util.Optional;
-import com.example.eventservicedto.dto.Event;
+import com.example.eventservicedto.entities.Event;
 
 
 public interface EventService {

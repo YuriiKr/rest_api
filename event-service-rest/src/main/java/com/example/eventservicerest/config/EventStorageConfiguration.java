@@ -1,6 +1,6 @@
 package com.example.eventservicerest.config;
 
-import com.example.eventservicedto.dto.Event;
+import com.example.eventservicedto.entities.Event;
 import com.example.eventserviceimpl.repository.EventStorage;
 import com.example.eventserviceimpl.service.EventServiceImpl;
 import com.example.eventservicerest.repository.JPAEventStorage;

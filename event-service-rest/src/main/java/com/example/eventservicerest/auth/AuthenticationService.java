@@ -2,11 +2,11 @@ package com.example.eventservicerest.auth;
 
 
 import com.example.eventservicerest.config.JwtService;
-import com.example.eventservicerest.token.Token;
+import com.example.eventservicedto.entities.Token;
 import com.example.eventservicerest.token.TokenRepository;
-import com.example.eventservicerest.token.TokenType;
-import com.example.eventservicerest.user.Role;
-import com.example.eventservicerest.user.User;
+import com.example.eventservicedto.entities.TokenType;
+import com.example.eventservicedto.entities.Role;
+import com.example.eventservicedto.entities.User;
 import com.example.eventservicerest.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;

@@ -1,7 +1,7 @@
 package com.example.eventservicerest.repository;
 
 import java.util.Optional;
-import com.example.eventservicerest.entities.Shop;
+import com.example.eventservicedto.entities.Shop;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

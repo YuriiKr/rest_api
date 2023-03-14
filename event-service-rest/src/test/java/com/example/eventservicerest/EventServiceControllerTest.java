@@ -1,6 +1,6 @@
 package com.example.eventservicerest;
 
-import com.example.eventservicedto.dto.Event;
+import com.example.eventservicedto.entities.Event;
 import com.example.eventserviceimpl.service.EventServiceImpl;
 import static org.hamcrest.Matchers.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
