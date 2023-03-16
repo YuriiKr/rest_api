@@ -1,5 +1,6 @@
 package com.example.eventservicerest.converter;
 
+import java.util.List;
 import java.util.stream.Collectors;
 import com.example.eventservicedto.entities.Shop;
 import com.example.eventservicedto.entities.Vehicle;
@@ -11,17 +12,18 @@ import org.springframework.stereotype.Component;
 @Component
 public class ShopEntityToModelConverter implements Converter<Shop, ShopModel> {
 
-    private final Converter<Vehicle, VehicleModel> vehicleConverter;
+    private final Converter<Vehicle, VehicleModel> vehicleEntityToModelConverter;
 
-    public ShopEntityToModelConverter(Converter<Vehicle, VehicleModel> vehicleConverter) {
-        this.vehicleConverter = vehicleConverter;
+    public ShopEntityToModelConverter(Converter<Vehicle, VehicleModel> vehicleEntityToModelConverter) {
+        this.vehicleEntityToModelConverter = vehicleEntityToModelConverter;
     }
 
     @Override
     public ShopModel convert(Shop source) {
-        final var vehicleModels = source.getVehicle().stream()
-                .map(vehicleConverter::convert)
+        final List<VehicleModel> vehicleModels = source.getVehicle().stream()
+                .map(vehicleEntityToModelConverter::convert)
                 .collect(Collectors.toList());
+
         return new ShopModel(source.getId(), source.getName(), source.getAddress(), vehicleModels);
     }
 }

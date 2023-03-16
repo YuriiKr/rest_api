@@ -1,10 +1,20 @@
 package com.example.eventservicedto.model;
 
 import java.util.List;
+import com.example.eventservicedto.entities.Vehicle;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-public record ShopModel(Long id, String name, String address, List<VehicleModel> vehicle) {
+@Data
+@AllArgsConstructor
+public class ShopModel {
+
+    private Long id;
+
+    private String name;
+
+    private String address;
+
+    private List<VehicleModel> vehicles;
 
 }

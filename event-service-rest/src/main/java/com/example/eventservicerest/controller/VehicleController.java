@@ -27,8 +27,8 @@ public class VehicleController {
 
     @PostMapping
     @RequestMapping("/create")
-    public void createVehicle( @RequestBody Vehicle vehicle) {
-        vehicleServiceImpl.createVehicle(vehicle);
+    public void createVehicle( @RequestBody VehicleModel vehicleModel) {
+        vehicleServiceImpl.createVehicle(vehicleModel);
     }
 
     @GetMapping
@@ -39,7 +39,7 @@ public class VehicleController {
 
     @GetMapping
     @RequestMapping("/getAll")
-    public List<Vehicle> getAllVehicles() {
+    public List<VehicleModel> getAllVehicles() {
         return vehicleServiceImpl.getAllVehicles();
     }
 

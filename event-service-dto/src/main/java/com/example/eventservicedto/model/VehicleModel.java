@@ -1,5 +1,16 @@
 package com.example.eventservicedto.model;
 
-public record VehicleModel(Long id, String type, String model, Long shopId) {
+import com.example.eventservicedto.entities.Shop;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
+public class VehicleModel {
+
+    private Long id;
+    private String type;
+    private String model;
+    private Long shopId;
 
 }
