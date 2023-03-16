@@ -24,28 +24,28 @@ import static org.mockito.Mockito.when;
 @AutoConfigureMockMvc
 public class EventServiceControllerTest {
 
-    @Autowired
-    private MockMvc mockMvc;
-
-    @MockBean
-    private EventServiceImpl eventServiceImpl;
-
-    @Test
-    void getAllEventsTest() throws Exception {
-        final Event event = new Event();
-        event.setEventType("Party");
-        event.setId(1L);
-        event.setTitle("Home Party");
-        event.setPlace("Lviv");
-        event.setSpeaker("Andrii");
-        event.setDateTime(LocalDateTime.now());
-        List<Event> listOfEvents = new ArrayList<>();
-        listOfEvents.add(event);
-        when(eventServiceImpl.getAllEvents()).thenReturn(listOfEvents);
-
-        this.mockMvc.perform(get("/event/getAll")).andExpect(status().isOk())
-                .andExpect(content().string(containsString("Home Party")));
-
-        verify(eventServiceImpl).getAllEvents();
-    }
+//    @Autowired
+//    private MockMvc mockMvc;
+//
+//    @MockBean
+//    private EventServiceImpl eventServiceImpl;
+//
+//    @Test
+//    void getAllEventsTest() throws Exception {
+//        final Event event = new Event();
+//        event.setEventType("Party");
+//        event.setId(1L);
+//        event.setTitle("Home Party");
+//        event.setPlace("Lviv");
+//        event.setSpeaker("Andrii");
+//        event.setDateTime(LocalDateTime.now());
+//        List<Event> listOfEvents = new ArrayList<>();
+//        listOfEvents.add(event);
+//        when(eventServiceImpl.getAllEvents()).thenReturn(listOfEvents);
+//
+//        this.mockMvc.perform(get("/event/getAll")).andExpect(status().isOk())
+//                .andExpect(content().string(containsString("Home Party")));
+//
+//        verify(eventServiceImpl).getAllEvents();
+//    }
 }

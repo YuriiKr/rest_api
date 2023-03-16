@@ -23,7 +23,8 @@ public class VehicleServiceImpl implements VehicleService{
 
 
     public VehicleServiceImpl(VehicleRepository vehicleRepository, ShopRepository shopRepository,
-            Converter<Vehicle, VehicleModel> vehicleConverter, Converter<VehicleModel, Vehicle> vehicleConverterToEntity) {
+            Converter<Vehicle, VehicleModel> vehicleConverter,
+            Converter<VehicleModel, Vehicle> vehicleConverterToEntity) {
         this.vehicleRepository = vehicleRepository;
         this.shopRepository = shopRepository;
         this.vehicleEntityToModelConverter = vehicleConverter;

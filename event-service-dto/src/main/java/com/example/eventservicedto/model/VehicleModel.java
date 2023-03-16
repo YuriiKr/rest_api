@@ -13,4 +13,7 @@ public class VehicleModel {
     private String model;
     private Long shopId;
 
+    public VehicleModel() {
+
+    }
 }
