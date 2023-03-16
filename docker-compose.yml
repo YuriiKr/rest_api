@@ -18,6 +18,33 @@ services:
       - '8080:8080'
     depends_on:
       - db
+
+  prometheus:
+    image: prom/prometheus:v2.37.6
+    ports:
+      - 9000:9090
+    volumes:
+      - ./prometheus:/etc/prometheus
+      - prometheus-data:/prometheus
+    command: --web.enable-lifecycle  --config.file=/etc/prometheus/prometheus.yml
+
+  grafana:
+    image: grafana/grafana:6.7.2
+    container_name: grafana
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=passwd
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+
 volumes:
   db:
+    driver: local
+  prometheus-data:
+    driver: local
+  grafana_data:
     driver: local
