@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 public class VehicleEntityToModelConverter implements Converter<Vehicle, VehicleModel> {
     @Override
     public VehicleModel convert(Vehicle source) {
-        return new VehicleModel(source.getId(), source.getType(), source.getModel(), source.getShop().getId());
+        return new VehicleModel(source.getId(), source.getType(), source.getModel(),
+                source.getManufacturer(), source.getShop().getId());
     }
 }

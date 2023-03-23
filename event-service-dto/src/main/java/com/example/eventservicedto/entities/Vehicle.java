@@ -29,6 +29,7 @@ public class Vehicle {
     private Long id;
     private String type;
     private String model;
+    private String manufacturer;
 
     @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)

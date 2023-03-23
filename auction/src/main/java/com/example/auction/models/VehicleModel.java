@@ -1,4 +1,4 @@
-package com.example.eventservicedto.model;
+package com.example.auction.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,7 +10,6 @@ public class VehicleModel {
     private Long id;
     private String type;
     private String model;
-    private String manufacturer;
     private Long shopId;
 
     public VehicleModel() {

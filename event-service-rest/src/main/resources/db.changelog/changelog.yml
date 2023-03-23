@@ -1,7 +1,7 @@
 databaseChangeLog:
-  - include:
-      file: db.changelog/create-shops-and-vehicles-schema.xml
-  - include:
-      file: db.changelog/insert-data-shops.xml
+  - includeAll:
+      path: db.changelog/migration/
+#  - include:
+#      file: db.changelog/insert-data-shops.xml
 #  - include:
 #      file: db.changelog/insert-data-vehicles.xml

@@ -10,6 +10,9 @@ import com.example.eventservicerest.repository.ShopRepository;
 import com.example.eventservicerest.repository.VehicleRepository;
 import lombok.Data;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Data
@@ -48,5 +51,14 @@ public class VehicleServiceImpl implements VehicleService{
         return vehicleRepository.findAll().stream()
                 .map(vehicleEntityToModelConverter::convert)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public Page<VehicleModel> getAllVehiclesByName(String manufacturer, String model, Pageable page) {
+         var vehicleEntities = vehicleRepository.getVehicleByName(manufacturer, model, page)
+                .stream()
+                .map(vehicleEntityToModelConverter::convert)
+                .collect(Collectors.toList());
+        return new PageImpl<>(vehicleEntities);
     }
 }

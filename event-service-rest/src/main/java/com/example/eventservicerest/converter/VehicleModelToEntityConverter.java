@@ -17,7 +17,7 @@ public class VehicleModelToEntityConverter implements Converter<VehicleModel, Ve
 
     @Override
     public Vehicle convert(VehicleModel source) {
-        return new Vehicle(source.getId(), source.getType(), source.getModel(),
+        return new Vehicle(source.getId(), source.getType(), source.getModel(), source.getManufacturer(),
                 shopRepository.findById(source.getShopId()).orElse(null));
     }
 }

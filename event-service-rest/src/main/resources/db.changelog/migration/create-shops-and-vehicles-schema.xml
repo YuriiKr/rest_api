@@ -18,6 +18,9 @@
             <column name="model" type="varchar(255)">
                 <constraints nullable="false"/>
             </column>
+            <column name="manufacturer" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
             <column name="shop_id" type="int">
                 <constraints nullable="false"/>
             </column>
