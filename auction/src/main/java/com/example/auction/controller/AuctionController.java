@@ -39,9 +39,4 @@ public class AuctionController {
         return vehicleServiceImpl.getAllVehicles();
     }
 
-//    @EventListener(ApplicationReadyEvent.class)
-//    public void test() {
-//        vehicleRepository.findAll().forEach(System.out::println);
-//    }
-
 }
