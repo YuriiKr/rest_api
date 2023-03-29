@@ -7,10 +7,12 @@ import com.example.eventservicedto.entities.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @EnableJpaRepositories
+@EnableDiscoveryClient
 //@EntityScan(basePackageClasses = {Event.class, User.class})
 @EntityScan(basePackageClasses = {Event.class, User.class, Token.class, Vehicle.class})
 public class EventServiceRestApplication {

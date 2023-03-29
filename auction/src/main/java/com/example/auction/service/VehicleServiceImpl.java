@@ -8,6 +8,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import com.example.auction.models.VehicleModel;
 import lombok.Data;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -16,9 +17,10 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class VehicleServiceImpl implements VehicleService {
 
-    final String uri = "http://localhost:8080/vehicle/getAll";
+//    final String uri = "http://localhost:8080/vehicle/getAll";
+    final String uri = "http://REST-SERVICE-WITH-DB/vehicle/getAll";
 
-    RestTemplate restTemplate = new RestTemplate();
+    final RestTemplate restTemplate;
 
     @Override
     public List<VehicleModel> getAllVehicles() {
