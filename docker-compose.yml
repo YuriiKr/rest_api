@@ -14,8 +14,23 @@ services:
 
   event-service-rest:
     image: rest:latest
+    depends_on:
+      - db
+      - auction
+      - discovery-service
+
+  auction:
+    image: auction:latest
     ports:
       - '8080:8080'
+    depends_on:
+      - db
+      - discovery-service
+
+  discovery-service:
+    image: discovery-service:latest
+    ports:
+      - '8761:8761'
     depends_on:
       - db
 
@@ -47,4 +62,8 @@ volumes:
   prometheus-data:
     driver: local
   grafana_data:
+    driver: local
+  auction-data:
+    driver: local
+  discovery-service:
     driver: local
