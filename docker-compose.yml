@@ -63,7 +63,3 @@ volumes:
     driver: local
   grafana_data:
     driver: local
-  auction-data:
-    driver: local
-  discovery-service:
-    driver: local
